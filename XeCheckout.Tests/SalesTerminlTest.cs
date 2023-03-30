@@ -66,8 +66,35 @@ public class SalesTerminlTest
         salesTerminal.SetPricing("C");
         salesTerminal.ScanProduct("D");
         salesTerminal.SetPricing("D");
-       
+
 
         Assert.That(salesTerminal.CalculateTotal(), Is.EqualTo(7.25));
+    }
+
+    [Test]
+    public void ScanProducts_InOrderAAAAAAAAAA_ShouldReturn7point25()
+    {
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+        salesTerminal.ScanProduct("A");
+        salesTerminal.SetPricing("A");
+
+        Assert.That(salesTerminal.CalculateTotal(), Is.EqualTo(10.25));
     }
 }
