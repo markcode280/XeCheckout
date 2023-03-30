@@ -48,12 +48,12 @@ namespace XeCheckout
             switch (product)
             {
                 case "A":
-                    _productA.Price = getSingleUnitValueAtQuantity(3, _productA.Quantity, _productA.Price, 3);
+                    _productA.Price = _productA.getSingleUnitValueAtQuantityForProduct(3, _productA.Quantity, Constants.Constants.ProductAPrice, 3);
                     break;
                 case "B":
                     return;   
                 case "C":
-                    _productA.Price = getSingleUnitValueAtQuantity(6, _productC.Quantity, _productA.Price, 5);
+                    _productC.Price = _productC.getSingleUnitValueAtQuantityForProduct(6, _productC.Quantity, Constants.Constants.ProductCPrice, 5);
                     break;
                 case "D":
                     return;
@@ -61,17 +61,7 @@ namespace XeCheckout
             }
 
         }
-        private double getSingleUnitValueAtQuantity(int quantityAtDiscount,int actualQuantity, double singleUnitValue, double priceAtQuantityDiscount)
-        {
-            if (actualQuantity < quantityAtDiscount)
-                return singleUnitValue;
-
-            var discount = (quantityAtDiscount * singleUnitValue) - priceAtQuantityDiscount; 
-            
-            var totalQuantityDiscount= Math.DivRem(actualQuantity, quantityAtDiscount);
-
-            return ((actualQuantity * singleUnitValue) - (totalQuantityDiscount.Quotient * discount)) / actualQuantity;
-        }
+      
 
        
         

@@ -35,7 +35,7 @@ public class SalesTerminlTest
 
     [Test]
 
-    public void ScanProducts_InOrderCCCCCC_ShouldReturn13Point25()
+    public void ScanProducts_InOrderCCCCCCC_ShouldReturn6()
     {
         salesTerminal.ScanProduct("C");
         salesTerminal.SetPricing("C");
@@ -49,13 +49,14 @@ public class SalesTerminlTest
         salesTerminal.SetPricing("C");
         salesTerminal.ScanProduct("C");
         salesTerminal.SetPricing("C");
-
+        salesTerminal.ScanProduct("C");
+        salesTerminal.SetPricing("C");
         Assert.That(salesTerminal.CalculateTotal(), Is.EqualTo(6.00));
     }
 
     [Test]
 
-    public void ScanProducts_InOrderABCD_ShouldReturn13Point25()
+    public void ScanProducts_InOrderABCD_ShouldReturn7point25()
     {
         salesTerminal.ScanProduct("A");
         salesTerminal.SetPricing("A");
